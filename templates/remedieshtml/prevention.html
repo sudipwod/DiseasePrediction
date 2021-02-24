@@ -1,0 +1,29 @@
+{% extends "basic.html" %}
+{% block head %}
+
+
+{% endblock %}
+{% block body %}
+<body>
+    
+    <div class="container" style="padding-top:150px;">
+
+<div class="d-flex flex-wrap" style="width: 80%;">
+    <div class="p-2  border ">
+        {% for y in preventions %}
+
+
+        <h1> {{y.title}}</h1>
+        <p style="color:white;"> {{y.body | truncatechars:200 | linebreaks}}</p>
+        <a href=" {{ y.get_absolute_url }}" > <button type="button" class="btn btn-primary">Read More..</button></a>
+        <br>
+        <br>
+        
+        {% endfor %}
+      
+
+    </div>
+</div>        
+</div>
+</body>
+{% endblock %}

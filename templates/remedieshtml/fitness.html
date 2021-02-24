@@ -1,0 +1,70 @@
+{% extends "basic.html" %}
+{% load static %}
+
+
+{% block title %}
+{% if category %}{{ category.name }}{% else %}Fitness{% endif %}
+{% endblock %}
+{% block body %}
+
+
+<div class="container" style="padding-top: 150px; ">
+
+
+    <div class="row">
+
+
+        <div class="col-4" >
+
+    <div class="d-flex flex-wrap">
+        <div class="p-2 ">
+
+<h3>Categories</h3>
+<ul class="fitness" style="background-color:black">
+<li {% if not category %}class="selected"{% endif %}>
+<a href="{% url 'remedies:fitness_list' %}">All</a>
+</li>
+{% for c in categories %}
+<li {% if category.slug == c.slug %}class="selected"
+{% endif %}>
+<a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+</li>
+{% endfor %}
+</ul>
+</div>
+  </div>
+        </div>
+
+
+    
+    <div class="col-8">
+
+        <div class="p-2 ">
+
+<div id="main" class="fitness-list">
+
+<h1>{% if category %}{{ category.name }}{% else %}Fitness Instructions
+{% endif %}</h1>
+<hr>
+{% for fit in fitness %}
+<div class="item">
+    <h4> {{fit.name}}</h4>
+  
+<a href="{{ fit.get_absolute_url }}">
+
+<img src="{{ fit.image.url }}" height="200px">
+<p> {{fit.description}}</p>
+</a>
+<!--<a href="{{ fit.get_absolute_url }}">{{ fitness.name }}</
+a>-->
+<br>
+
+</div>
+
+{% endfor %}
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

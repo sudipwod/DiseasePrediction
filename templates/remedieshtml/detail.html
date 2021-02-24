@@ -1,0 +1,27 @@
+{% extends "basic.html" %}
+{% block head %}
+
+
+{% endblock %}
+{% block body %}
+<body>
+    
+    <div class="container" style="padding-top:150px;">
+
+<div class="d-flex flex-wrap" style="width: 80%;">
+    <div class="p-2  border ">
+   
+
+
+        <h1> {{detail.title}}</h1>
+        <p class="text-danger">
+            {{detail.body  | linebreaks}}</p>
+       
+
+      
+
+    </div>
+</div>        
+</div>
+</body>
+{% endblock %}

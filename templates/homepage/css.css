@@ -1,0 +1,22 @@
+
+.img {
+    position: relative;
+    float: left;
+    width:  200px;
+    height: 200px;
+    background-position: 100% 100%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+p{
+    color: white
+}
+.p-3{
+    padding-top: 50px;
+
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
